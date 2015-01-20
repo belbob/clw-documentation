@@ -1,0 +1,7 @@
+site_name: CLW Documentation
+
+pages:
+- ['index.md', 'Home']
+- ['installguide/adminserver/graphite.md', 'Admin Server', 'Graphite']
+- ['installguide/adminserver/elasticsearch.md', 'Admin Server', 'ElasticSearch']
+- ['installguide/adminserver/jenkins.md', 'Admin Server', 'Jenkins']
