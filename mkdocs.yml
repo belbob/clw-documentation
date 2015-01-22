@@ -5,4 +5,5 @@ pages:
 - ['installguide/adminserver/elasticsearch.md', 'Admin Server', 'ElasticSearch']
 - ['installguide/adminserver/graphite.md', 'Admin Server', 'Graphite']
 - ['installguide/adminserver/jenkins.md', 'Admin Server', 'Jenkins']
+- ['installguide/adminserver/ocs.md', 'Admin Server', 'OCS Inventory']
 - ['installguide/adminserver/zabbix.md', 'Admin Server', 'Zabbix']
