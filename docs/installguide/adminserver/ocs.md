@@ -80,3 +80,25 @@ replace ocsinventory-agent.cfg (only for localhost)
 
 ``ocsinventory-agent``
 
+
+### Client install ocsinventory-agent
+
+``# yum -y install ocsinventory-agent``
+
+#### Config ocsinventory-agent
+
+	# cat << EOT > /etc/ocsinventory/ocsinventory-agent.cfg
+	server = http://192.168.225.3/ocsinventory
+	logger = Stderr
+	logfile = /var/log/ocsinventory-agent/ocsinventory-agent.log
+	EOT
+
+
+and 
+
+``# sed -i 's/none/cron/' /etc/sysconfig/ocsinventory-agent``
+
+#### run
+
+``ocsinventory-agent``
+
