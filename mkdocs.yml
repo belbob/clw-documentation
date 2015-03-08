@@ -1,4 +1,5 @@
 site_name: CLW Documentation
+theme: mkdocs
 
 pages:
 - ['index.md', 'Home']
@@ -7,3 +8,12 @@ pages:
 - ['installguide/adminserver/jenkins.md', 'Admin Server', 'Jenkins']
 - ['installguide/adminserver/ocs.md', 'Admin Server', 'OCS Inventory']
 - ['installguide/adminserver/zabbix.md', 'Admin Server', 'Zabbix']
+- ['network/openwrt.md', 'Network', 'openwrt']
+- ['network/vyos.md', 'Network', 'vyos']
+- ['tools/ansible.md', 'Tools', 'ansible']
+- ['tools/git.md', 'Tools', 'git']
+- ['tools/vim.md', 'Tools', 'vim']
+- ['virtualization/docker/docker.md', 'Virtualization', 'Docker']
+- ['virtualization/opennebula.md', 'Virtualization', 'OpenNebula']
+- ['virtualization/virsh.md', 'Virtualization', 'Virsh']
+
