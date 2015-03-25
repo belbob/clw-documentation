@@ -19,7 +19,9 @@ Created maandag 07 januari 2013
 
 ### Fetch from github
 ``# git fetch``
+
 or
+
 ``# git pull  (= fetch + merge)``
 
 ### working with branch
