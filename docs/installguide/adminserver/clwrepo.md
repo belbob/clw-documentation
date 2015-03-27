@@ -22,7 +22,7 @@ Created Tuesday 24 March 2015
 	        LibreOffice_4.4.1_Linux_x86_rpm.tar.gz
 	http://download.documentfoundation.org/libreoffice/stable/4.4.1/rpm/x86/\
 	        LibreOffice_4.4.1_Linux_x86_rpm_langpack_nl.tar.gz\
-	 http://download.documentfoundation.org/libreoffice/stable/4.4.1/rpm/x86/\
+	http://download.documentfoundation.org/libreoffice/stable/4.4.1/rpm/x86/\
 	        LibreOffice_4.4.1_Linux_x86_rpm_helppack_nl.tar.gz``
 
 ``# tar -xzvf LibreOffice_4.4.1_Linux_x86_rpm.tar.gz``
