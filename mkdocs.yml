@@ -4,7 +4,6 @@ theme: mkdocs
 pages:
 - ['index.md', 'Home']
 - ['installguide/adminserver/clwrepo.md', 'Admin Server', 'CLW-repo']
-- ['installguide/adminserver/clwrepo4.md', 'Admin Server', 'CLW-repo4']
 - ['installguide/adminserver/elasticsearch.md', 'Admin Server', 'ElasticSearch']
 - ['installguide/adminserver/graphite.md', 'Admin Server', 'Graphite']
 - ['installguide/adminserver/jenkins.md', 'Admin Server', 'Jenkins']
