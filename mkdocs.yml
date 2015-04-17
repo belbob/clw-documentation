@@ -9,7 +9,7 @@ pages:
 - ['installguide/adminserver/jenkins.md', 'Admin Server', 'Jenkins']
 - ['installguide/adminserver/ocs.md', 'Admin Server', 'OCS Inventory']
 - ['installguide/adminserver/zabbix.md', 'Admin Server', 'Zabbix']
-- ['network/openwrt.md', 'Network', 'openwrt']
+- ['network/openwrt.md', 'Network', 'OpenWrt']
 - ['network/vyos.md', 'Network', 'vyos']
 - ['tools/ansible.md', 'Tools', 'ansible']
 - ['tools/git.md', 'Tools', 'git']

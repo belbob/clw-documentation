@@ -1,12 +1,13 @@
-# config OpenWRT
+# OpenWrt at CLW
 Created Thursday 17 July 2014
 
-### Install OpenWRT (on TP-Link WDR4300)
+### Install OpenWrt
+(example TP-Link WDR4300)
 
-#### Download OpenWRT
-goto <http://wiki.openwrt.org/toh/start> and select <http://wiki.openwrt.org/toh/tp-link/tl-wdr4300> and download: <http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-factory.bin>
+#### Download OpenWrt
+goto <http://wiki.openwrt.org/toh/start> and select <http://wiki.openwrt.org/toh/tp-link/tl-wdr4300> and download: <http://downloads.openwrt.org/attitude_adjustment/14.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-factory.bin>
 
-#### Install OpenWRT
+#### Install OpenWrt
 Poweron router, connect lan to PC, enable wired connection and look for Default route -> 192.168.0.1.
 
 Point your browser to 192.168.0.1 and login with admin, pw -> admin (see <http://www.routerpasswords.com/> )
@@ -22,8 +23,11 @@ type passwd into the prompt. You will be prompted to set a new password for the 
 
 ``# ssh root@192.168.1.1``
 
+#### More documentation
+Documentation wiki: <http://wiki.openwrt.org/doc/start>
 
-### Rename the router and set timezone for europe/brussels
+### System settings
+Rename the router and set timezone for europe/brussels
 
 ``# uci set system.@system[0].hostname='4451-X Integrated Services Router``'
 
@@ -41,7 +45,7 @@ or
 	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
 
 
-### Set network
+### Network settings
 
 ``# uci set network.lan.ipaddr=192.168.244.254``
 
@@ -67,50 +71,7 @@ or
 
 ``# reboot``
 
-### Set firewall
-Howto add firewall rule
-
-This is a good example of both adding a firewall rule to forward the TCP SSH port, and of the negative (-1) syntax used with uci.
-
-``# uci add firewall rule`` 
-
-``# uci set firewall.@rule[-1].name=Allow-SSH-from-wan`` 
-
-``# uci set firewall.@rule[-1].src=wan`` 
-
-``# uci set firewall.@rule[-1].target=ACCEPT`` 
-
-``# uci set firewall.@rule[-1].proto=tcp`` 
-
-``# uci set firewall.@rule[-1].dest_port=22`` 
-
-``# uci commit firewall`` 
-
-``# /etc/init.d/firewall restart``
-
-### Enable remote logging
-
-``# uci set system.@system[0].log_ip=192.168.225.3``
-
-``# uci set system.@system[0].conloglevel=7``
-
-``# uci commit system``
-
-``# /etc/init.d/log restart``
-
-#### Enable firewall logging (-j LOG)
-
-In recent Openwrt builds this is as simple as editing /etc/config/firewall and adding a line to each zone that you want to get logged
-
-	config 'zone'
-	option 'name' 'wan'
-	...
-		option 'log' '1'
-
-
-### Wireless
-
-#### edit wireless config
+### Wireless settings
 
 ``# uci set wireless.@wifi-iface[0].ssid=clw_pclabo``
 
@@ -159,7 +120,26 @@ To rebuild the configuration file, e.g. after installing a new wireless driver, 
 
 wifi detect gives UCI configuration entries for all installed interfaces that do not have UCI entries in /etc/config/wireless. So you can remove /etc/config/wireless and run the above again to reset your wifi configuration.
 
-### upgrade
+### Firewall config
+This is a example of both adding a firewall rule to forward the TCP SSH port, and of the negative (-1) syntax used with uci.
+
+``# uci add firewall rule`` 
+
+``# uci set firewall.@rule[-1].name=Allow-SSH-from-wan`` 
+
+``# uci set firewall.@rule[-1].src=wan`` 
+
+``# uci set firewall.@rule[-1].target=ACCEPT`` 
+
+``# uci set firewall.@rule[-1].proto=tcp`` 
+
+``# uci set firewall.@rule[-1].dest_port=22`` 
+
+``# uci commit firewall`` 
+
+``# /etc/init.d/firewall restart``
+
+### System upgrade
 
 ``# cd /tmp``
 
@@ -169,7 +149,7 @@ wifi detect gives UCI configuration entries for all installed interfaces that do
 
 ``# opkg update``
 
-### tweaks
+### Some tweaks
 Add the following lines before the exit 0 statement in [/etc/rc.local:](file:///etc/rc.local%3A)
 
 	cat << EOT > /etc/rc.local
@@ -180,7 +160,6 @@ Add the following lines before the exit 0 statement in [/etc/rc.local:](file:///
 	ifconfig wlan1 txqueuelen 7935 mtu 1328
 	exit 0
 	EOT
-
 
 and add to [/etc/sysctl.conf:](file:///etc/sysctl.conf%3A)
 
@@ -196,7 +175,28 @@ and add to [/etc/sysctl.conf:](file:///etc/sysctl.conf%3A)
 	EOT
 
 
-### Zabbix client
+### Enable remote logging
+
+``# uci set system.@system[0].log_ip=192.168.225.3``
+
+``# uci set system.@system[0].conloglevel=7``
+
+``# uci commit system``
+
+``# /etc/init.d/log restart``
+
+#### Enable firewall logging (-j LOG)
+
+In recent Openwrt builds this is as simple as editing /etc/config/firewall and adding a line to each zone that you want to get logged
+
+	config 'zone'
+	option 'name' 'wan'
+	...
+		option 'log' '1'
+
+
+
+### Enable Zabbix client
 
 #### install zabbix_agentd
 
