@@ -17,4 +17,5 @@ pages:
 - ['virtualization/docker/docker.md', 'Virtualization', 'Docker']
 - ['virtualization/opennebula.md', 'Virtualization', 'OpenNebula']
 - ['virtualization/virsh.md', 'Virtualization', 'Virsh']
+- ['virtualization/raf.md', 'Virtualization', 'raf']
 
