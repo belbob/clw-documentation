@@ -41,6 +41,8 @@ You can verify that by calling icinga2 feature list CLI command to see which fea
 #### Setting up Check Plugins
 Without plugins Icinga 2 does not know how to check external services. The Monitoring Plugins Project provides an extensive set of plugins which can be used with Icinga 2 to check whether services are working properly.
 
+``# yum install epel-release``
+
 ``# yum install nagios-plugins-all``
 
 ### Running Icinga 2
@@ -55,7 +57,7 @@ Setting up Icinga Web 2
 
 ### Installing MySQL database server
 
-``# yum install mariadb-server mariadb``
+``# yum install mariadb-server mariadb ``
 
 ``# systemctl enable mariadb``
 
@@ -65,7 +67,7 @@ Setting up Icinga Web 2
 
 #### Installing the IDO modules for MySQL
 
-``# yum install icinga2-ido-mysql``
+``# yum install icinga2-ido-mysql php-mysql php-ldap``
 
 #### Setting up the MySQL database
 
@@ -86,6 +88,8 @@ Set up a MySQL database for Icinga 2:
 ``# systemctl restart icinga2``
 
 ### Setting up the webserver
+
+``# sed -i 's/;date.timezone =/&\ndate.timezone = Europe\/Brussels/' /etc/php.ini``
 
 ``# yum install httpd``
 
