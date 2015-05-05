@@ -116,6 +116,8 @@ By default the command pipe file is owned by the group icingacmd with read/write
 
 ``# usermod -a -G icingacmd apache``
 
+``# usermod -a -G icinga2 apache``
+
 The webserver's user is different between distributions so you might have to change www-data to wwwrun, www, or apache. Change "www-data" to the user you're using to run queries.
 
 ### Installing Icinga Web 2
