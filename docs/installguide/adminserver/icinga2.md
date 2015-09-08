@@ -99,9 +99,9 @@ Set up a MySQL database for Icinga 2:
 
 #### Firewall Rules
 
-``# firewall-cmd --add-service=http``
+``# firewall-cmd --zone=public --add-port=80/tcp --permanent``
 
-``# firewall-cmd --permanent --add-service=http``
+``# firewall-cmd --reload``
 
 ### Setting Up External Command Pipe
 Web interfaces and other Icinga addons are able to send commands to Icinga 2 through the external command pipe.
@@ -141,5 +141,11 @@ Finally visit Icinga Web 2 in your browser to access the setup wizard and comple
 
 attention: resource icinga_ido database = icinga !!!!
 
+#### Adding new Host
+Use the same name for nod and filename .ex. "node1.conf" must have "object Host node1"
 
+``# mkdir /etc/icinga2/conf.d/hosts``
 
+``# vi /etc/icinga2/conf.d/hosts/node.conf``
+
+  # Example of node.conf file you can find at http://docs.icinga.org/icinga2/snapshot/doc/module/icinga2/chapter/configuring-icinga2-first-steps#hosts-conf
