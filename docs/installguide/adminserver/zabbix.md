@@ -10,11 +10,17 @@ Created Tuesday 23 December 2014
 
 ``# rpm -ihv http://repo.zabbix.com/zabbix/2.4/rhel/7/x86_64/zabbix-release-2.4-1.el7.noarch.rpm``
 
-``# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent``
+``# yum -y install mariadb-server zabbix-server-mysql zabbix-web-mysql zabbix-agent``
 
 ### Creating initial database
 
 #### Create zabbix database and user on MySQL
+
+``# systemctl enable mariadb.service``
+
+``# systemctl start mariadb.service``
+
+``# mysql_secure_installation``
 
 ``# mysql -u root -p``
 
@@ -25,7 +31,7 @@ Created Tuesday 23 December 2014
 
 #### Import initial schema and data
 
-``# cd /usr/share/doc/zabbix-server-mysql-2.4.3/create/``
+``# cd /usr/share/doc/zabbix-server-mysql-2.4.6/create/``
 
 ``# mysql -u root -p zabbix < schema.sql``
 
