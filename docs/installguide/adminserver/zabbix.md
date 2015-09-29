@@ -71,6 +71,7 @@ Created Tuesday 23 December 2014
 
 ``# firewall-cmd --zone=public --add-port=10051/udp --permanent``
 
+``# firewall-cmd --reload``
 
 ### Start the zabbix-server process
 
